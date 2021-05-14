@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<title>{% block title %}{% endblock title %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+ <style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.avatar {
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+
+}
+</style>
+<body class="w3-light-grey" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px; background-color: #dddddd;" id="mySidebar"><br>
+    <div class="w3-container">
+        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+           title="close menu">
+            <i class="fa fa-remove"></i>
+        </a>
+<img src="{% static 'assets/t.jpeg' %}" alt="Avatar" style="height:50%; width:50%" class="avatar">
+        <h4><b>Madam Diana</b></h4>
+<p>CEO of Daughter of Zion Health and Faith, i am a Mother and a wife, i Love nature and doing good.</p>
+    </div>
+    <div class="w3-bar-block">
+        <a href="{%url 'recent' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+                class="fa fa-th-large fa-fw w3-margin-right"></i>Recent</a>
+<!--        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i-->
+<!--                class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>-->
+        <a href="tel:123" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+    </div>
+    <div class="w3-panel w3-large">
+        <i class="fa fa-facebook-official w3-xxxlarge  w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-xxxlarge w3-hover-opacity"></i>
+        <i class="fa fa-whatsapp w3-xxxlarge w3-hover-opacity"></i>
+
+
+    </div>
+
+
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+     title="close side menu" id="myOverlay"></div>
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+<!--    nav bar-->
+    <div style="background-color:#2b2a2ec4;">
+        <a href="#"><img src="{% static 'assets/t.jpeg' %}" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    </div>
+<!--    nav bar-->
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32" style="background-image: url('static/assets/t.jpeg')">
+        <h1><b>Daughter of Zion Health and Faith</b></h1>
+        <h4>Welcome to the blog of <span class="w3-tag">Madam Diana</span></h4>
+    </header>
+    <div class="w3-main" style="margin-left:300px">
+        <!-- Grid -->
+        <div class="w3-row">
+
+            {%block content%}
+            {%endblock%}
+            <!-- Blog entry -->
+        <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+            <div class="w3-third w3-dark-grey">
+                <p><i class="fa fa-whatsapp w3-xxlarge w3-text-light-grey"></i></p>
+                <p></p>
+            </div>
+            <div class="w3-third w3-teal">
+                <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+                <p>Ghana, Tamale</p>
+            </div>
+            <div class="w3-third w3-dark-grey">
+                <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+                <p>+233</p>
+            </div>
+        </div>
+        <hr>
+
+
+        <!-- Footer -->
+        <footer style="text-align:center;" class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+            <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+            <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+            <p>Made by <a href="#" target="_blank">BEJ</a></p>
+        </footer>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn diana_blog.wsgi

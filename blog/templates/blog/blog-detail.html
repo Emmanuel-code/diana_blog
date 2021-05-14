@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block title %}{{detail.title}}{% endblock title %}
+{% block content %}
+<style>
+    .avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 80px;
+}
+</style>
+
+
+<!-- Blog entries -->
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="{{detail.image.url}}" alt="{{detail.title}}" style="width:100%; height:300px;">
+      <hr>
+    <div class="w3-container">
+      <h3><b>{{detail.title}}</b></h3>
+      <h5>{{detail.user}}, <span class="w3-opacity">{{detail.created}}</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>{{detail.content}}</p>
+
+    </div>
+  </div>
+{% endblock %}
